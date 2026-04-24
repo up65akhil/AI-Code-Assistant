@@ -40,5 +40,5 @@ IntelliFix is a sophisticated full-stack developer assistant built with the **ME
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/up65akhil/intellifix.git](https://github.com/up65akhil/intellifix.git)
-cd intellifix
+git clone [https://github.com/up65akhil/AI-Code-Assistant.git](https://github.com/up65akhil/AI-Code-Assistant.git)
+cd AI-Code-Assistant
