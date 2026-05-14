@@ -54,10 +54,11 @@ const Sidebar = () => {
         <img
           src={theme === 'dark' ? assets.new_logo_dark : assets.new_logo}
           alt="Logo"
-          className="w-full h-32 mx-w-48 "
+          className="w-full h-32 mx-w-48"
         />
 
         <div className="mt-auto">
+          {/* Contact with Developer Section */}
           {user && (
             <div className="p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md">
               <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
@@ -94,6 +95,22 @@ const Sidebar = () => {
               </div>
             </div>
           )}
+
+          {/* Credits Section */}
+          {user && (
+            <div className="flex items-center justify-between gap-3 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md">
+              <div className="flex flex-col">
+                <span className="text-xs text-gray-600 dark:text-purple-200">
+                  Credits
+                </span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                  {user.credits ?? 0}
+                </span>
+              </div>
+            </div>
+          )}
+          
+          {/* Dark Mode Toggle */}
           <div className="flex items-center justify-between gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md cursor-pointer">
             <div className="flex items-center gap-2 text-sm">
               <img
@@ -103,7 +120,7 @@ const Sidebar = () => {
               />
               <p className="text-sm">Dark Mode</p>
             </div>
-            <label className="relative inline-flex  cursor-pointer">
+            <label className="relative inline-flex cursor-pointer">
               <input
                 type="checkbox"
                 className="sr-only peer"
@@ -112,9 +129,11 @@ const Sidebar = () => {
                 onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               />
               <div className="w-9 h-5 bg-gray-400 rounded-full peer-checked:bg-purple-600 transition-all"></div>
-              <span className="absolute left-1 top-1 w-3 h-3 bg-white rounded-full  transition-transform peer-checked:traslate-x-4"></span>
+              <span className="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform peer-checked:translate-x-4"></span>
             </label>
           </div>
+          
+          {/* User Profile / Logout */}
           <div className="flex items-center gap-3 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md cursor-pointer group">
             <img
               className="w-7 rounded-full not-dark:invert"
@@ -131,12 +150,12 @@ const Sidebar = () => {
                 alt="logout"
                 onClick={() => {
                   logout();
-                  // navigate('/login');
                 }}
               />
             )}
           </div>
         </div>
+        
         <img
           onClick={() => setIsMenuOpen(false)}
           src={assets.close_icon}
@@ -149,4 +168,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
